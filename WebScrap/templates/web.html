@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>WEB SCRAPPING</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body style="background:pink">
+    <header><h2> WEB SCRAPPING</h2></header>
+    <section>
+        <form style="text-align:center" action="/web" method="POST">
+            Enter the URL <input type="text" name="url" size="75" value="{{request.form.url}}"><br>
+            <input type="submit" value="Scrap">
+        </form>
+        {% if article %}
+        <textarea name="scrap" rows="25" cols="200">
+			Content : {{ article }} 
+		</textarea>
+        {% endif %}
+        {% if error %}
+        <p> Error : {{error}} </p>
+        {% endif %}
+    </section>
+</body>
+</html>
