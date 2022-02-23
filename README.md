@@ -1,1 +1,1 @@
-Scrapping the web content inside <p>tags.
+Scrapping the web content inside paragraph tags.
